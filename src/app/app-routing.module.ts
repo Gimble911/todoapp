@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'newtask',
+    loadChildren: () => import('./newtask/newtask.module').then( m => m.NewtaskPageModule)
+  },
 ];
 
 @NgModule({
