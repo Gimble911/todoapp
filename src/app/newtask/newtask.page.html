@@ -28,7 +28,7 @@
 <ion-item >
   <ion-icon name="calendar-outline" slot="start"></ion-icon>
     <ion-label>Due date</ion-label>
-    <ion-datetime [(ngModel)]="taskDate" displayFormat="D MMM YYYY" ></ion-datetime>
+    <ion-datetime [(ngModel)]="taskDate" displayFormat="D MMM YYYY" min="2000-03-14" max="2090-12-09"></ion-datetime>
 </ion-item>
 
 
