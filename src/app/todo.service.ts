@@ -24,9 +24,11 @@ export class TodoService {
   }
 
   getAllTasks() {
-    const task: any = [];
+    // eslint-disable-next-line prefer-const
+    let task: any = [];
     this.storage.forEach((key, value, index) => {
-    task.push({key:value, value:key});
+    // eslint-disable-next-line quote-props
+    task.push({'key':value, 'value':key});
 
     });
     return task;

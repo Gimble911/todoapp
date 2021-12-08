@@ -31,7 +31,8 @@ export class UpdateTaskPage implements OnInit {
 
   async update(){
     this.taskObject = ({taskName:this.taskName, taskDate:this.taskDate, taskPriority:this.taskPriority});
-    const uid = this.task.key;
+    // eslint-disable-next-line prefer-const
+    let uid = this.task.key;
     await this.todoServive.updateTask(uid, this.taskObject);
     this.dismis();
   }

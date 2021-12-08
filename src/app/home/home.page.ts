@@ -17,8 +17,6 @@ export class HomePage {
 
   today: number = Date.now();
 
-  buttonColor = '#000';
-
   constructor(public modalCtrl: ModalController, public todoService: TodoService) {
     this.getAllTask();
   }
