@@ -13,14 +13,13 @@
 
   <ion-card *ngFor="let item of todoList; let i =index" class="ion-margin">
     <ion-card-header>
-      <!-- <ion-card-subtitle [style.color]="item.itemPriority === 'High' ? 'red'  : (item.value.itemPriority === 'Low' ? 'green' : 'orange')">
-        {{item.itemCategory}}
+       <ion-card-subtitle [style.color]="item.itemPriority === 'High' ? 'red'  : (item.value.itemPriority === 'Low' ? 'green' : 'orange')">
 
-      </ion-card-subtitle>-->
+      </ion-card-subtitle>
       <ion-item >
-        <!--<ion-icon *ngIf="item.value.itemPriority === 'High' " color="danger" size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.value.itemPriority === 'High' " color="danger" size="small" name="ellipse"></ion-icon>
         <ion-icon *ngIf="item.value.itemPriority === 'Medium' " color="warning" size="small" name="ellipse"></ion-icon>
-        <ion-icon *ngIf="item.value.itemPriority === 'Low' " color="success" size="small" name="ellipse"></ion-icon>-->
+        <ion-icon *ngIf="item.value.itemPriority === 'Low' " color="success" size="small" name="ellipse"></ion-icon>
         <ion-item>
           <ion-label>{{item.value.itemName}}</ion-label>
         </ion-item>
@@ -33,11 +32,11 @@
 
     <ion-row>
 
-<!--      <ion-item >
-        <ion-icon name="share-outline"></ion-icon>
-        <p>Share</p>
+     <ion-item button (click)="update(item)">
+        <ion-icon name="create-outline"></ion-icon>
+        <p>Update</p>
       </ion-item>
--->
+
       <ion-item button (click)="delete(item.key)">
         <ion-icon name="trash-outline"></ion-icon>
         <p>Cancel</p>

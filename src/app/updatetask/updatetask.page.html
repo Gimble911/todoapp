@@ -31,21 +31,8 @@
     <ion-datetime [(ngModel)]="taskDate" displayFormat="D MMM YYYY H:mm"></ion-datetime>
 </ion-item>
 
-<ion-item >
-  <ion-icon name="pricetag-outline" slot="start"></ion-icon>
-  <ion-label>Category</ion-label>
-  <span>{{taskCategory}}</span>
-</ion-item>
 
-<ion-item >
-  <ion-chip *ngFor="let category of categories; let i = index" (click)="selectedCategory(i)">
-    <ion-label>{{category}}</ion-label>
-
-  </ion-chip>
-
-</ion-item>
-
-<ion-button class="ion-margin" expand="block" (click)="add()">Update task</ion-button>
+<ion-button class="ion-margin" expand="block" (click)="update()">Update task</ion-button>
 
 </ion-card>
 </ion-content>

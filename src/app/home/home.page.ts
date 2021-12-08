@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { TodoService } from '../todo.service';
+import { UpdateTaskPage } from './../updatetask/updatetask.page';
+
 
 @Component({
   selector: 'app-home',
@@ -14,6 +16,8 @@ export class HomePage {
   todoList = [];
 
   today: number = Date.now();
+
+  buttonColor = '#000';
 
   constructor(public modalCtrl: ModalController, public todoService: TodoService) {
     this.getAllTask();
@@ -46,10 +50,17 @@ export class HomePage {
 
   }
 
-  async update() {
+  async update(selectedTask) {
     const modal = await this.modalCtrl.create({
-      component: UpdateTaskPage
+      component: UpdateTaskPage,
+      componentProps: {task: selectedTask}
     });
+
+    modal.onDidDismiss().then(() => {
+      this.getAllTask();
+    });
+
+    return await modal.present();
   }
 
 }

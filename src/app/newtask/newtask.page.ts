@@ -8,14 +8,12 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./newtask.page.scss'],
 })
 export class NewtaskPage implements OnInit {
-  categories = ['work', 'personal', 'home'];
 
   taskName;
   taskDate;
   taskPriority;
-  taskCategory;
 
-  taskObject;
+  taskObject ={};
 
   constructor(public modalCtrl: ModalController, public todoService: TodoService) { }
 
@@ -24,29 +22,28 @@ export class NewtaskPage implements OnInit {
 
   async dismis(){
     await this.modalCtrl.dismiss(this.taskObject);
+  }
+
+  async add(){
+    this.taskObject = ({taskName:this.taskName,
+      taskDate:this.taskDate,
+      taskPriority:this.taskPriority});
+
+    const uid =this.taskName + this.taskDate;
+
+    if (uid) {
+      await this.todoService.addTask(uid, this.taskObject);
+    } else {
+      console.log('can\'t save empty task');
+    }
+
+    this.dismis();
 
   }
 
-  selectedCategory(index){
-this.taskCategory = this.categories[index];
+  // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
+  async dismiss(){
+    await this.modalCtrl.dismiss(this.taskObject);
   }
-
-async add(){
-  this.taskObject = ({itemName:this.taskName,
-      itemDueDate:this.taskDate,
-      itemPriority:this.taskPriority,
-    itemCategory:this.taskCategory});
-
-  const uid =this.taskName + this.taskDate;
-
-  if (uid) {
-    await this.todoService.addTask(uid, this.taskObject);
-  } else {
-    console.log('can\'t save empty task');
-  }
-
-  this.dismis();
-
-}
 
 }
