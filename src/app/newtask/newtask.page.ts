@@ -29,7 +29,8 @@ export class NewtaskPage implements OnInit {
       taskDate:this.taskDate,
       taskPriority:this.taskPriority});
 
-    const uid =this.taskName + this.taskDate;
+    // eslint-disable-next-line prefer-const
+    let uid =this.taskName + this.taskDate;
 
     if (uid) {
       await this.todoService.addTask(uid, this.taskObject);
