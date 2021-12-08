@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>New Task</ion-title>
-    <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="dismis()"></ion-icon>
+  <ion-toolbar color="success">
+    <ion-title style="font-weight: 700;font-size: 2em; text-align: center; color: black;">New Task</ion-title>
+    <ion-icon name="arrow-back" slot="start" size="large" class="ion-padding" (click)="dismis()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -31,7 +31,7 @@
     <ion-datetime [(ngModel)]="taskDate" displayFormat="D MMM YYYY H:mm"></ion-datetime>
 </ion-item>
 
-<ion-button class="ion-margin" expand="block" (click)="add()">Add task</ion-button>
+<ion-button class="ion-margin" expand="block" shape="round" color="success" (click)="add()">Add task</ion-button>
 
 </ion-card>
 </ion-content>
