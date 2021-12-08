@@ -7,17 +7,16 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: 'newtask',
     loadChildren: () => import('./newtask/newtask.module').then( m => m.NewtaskPageModule)
   },
   {
     path: 'updatetask',
     loadChildren: () => import('./updatetask/updatetask.module').then( m => m.UpdateTaskPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
   },
 ];
 
