@@ -14,11 +14,10 @@
 
   <ion-card *ngFor="let item of todoList; let i =index" class="ion-margin">
 
-    <ion-card-content class="ion-justify-content-end">
-      <ion-label>Due: {{item.value.taskDate | date:'fullDate'}}</ion-label>
+    <ion-card-content style="text-align: end;">
+      <ion-label >Due: {{item.value.taskDate | date:'mediumDate'}}</ion-label>
   </ion-card-content>
 
-    <ion-card-header>
        <ion-card-subtitle [style.color]="item.taskPriority === 'High' ? 'red'  : (item.value.taskPriority === 'Low' ? 'green' : 'orange')">
 
       </ion-card-subtitle>
@@ -27,10 +26,9 @@
         <ion-icon *ngIf="item.value.taskPriority === 'Medium' " color="warning" size="small" name="ellipse"></ion-icon>
         <ion-icon *ngIf="item.value.taskPriority === 'Low' " color="success" size="small" name="ellipse"></ion-icon>
         <ion-item>
-          <ion-label>{{item.value.taskName}}</ion-label>
+          <ion-label [ngClass]="{'active': item.active}">{{item.value.taskName}}</ion-label>
         </ion-item>
       </ion-item>
-    </ion-card-header>
 
 
     <ion-row class="ion-justify-content-center">
@@ -45,7 +43,7 @@
         <p>Remove</p>
       </ion-item>
 
-      <ion-item button (click)="complete(item)" [ngClass]="{'change-color': itemColor}">
+      <ion-item button (click)="complete(item)" [ngClass]="{'active': item.active}">
         <ion-icon name="checkMark-done-outline"></ion-icon>
         <p>Complete</p>
       </ion-item>

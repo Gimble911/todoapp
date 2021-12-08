@@ -9,9 +9,13 @@ ion-content{
    // color: #8c8c8c;
 
   }
-  .change-color {
+
+  ion-item.active {
     color: green;
-    font-weight: 800;
-    border-color: green;
   }
+
+  ion-label.active {
+    text-decoration: line-through;
+  }
+
 }

@@ -41,7 +41,7 @@ export class HomePage {
   }
 
   async complete(item){
-    this.itemColor = '#72CB86';
+    item.active = !item.active;
   }
 
   getAllTask() {
