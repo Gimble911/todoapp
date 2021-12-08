@@ -45,8 +45,8 @@
         <p>Remove</p>
       </ion-item>
 
-      <ion-item >
-        <ion-icon name="checkMark-outline"></ion-icon>
+      <ion-item button (click)="complete(item)" [ngClass]="{'change-color': itemColor}">
+        <ion-icon name="checkMark-done-outline"></ion-icon>
         <p>Complete</p>
       </ion-item>
 

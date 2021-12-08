@@ -28,8 +28,9 @@
 <ion-item >
   <ion-icon name="calendar-outline" slot="start"></ion-icon>
     <ion-label>Due date</ion-label>
-    <ion-datetime [(ngModel)]="taskDate" displayFormat="D MMM YYYY H:mm"></ion-datetime>
+    <ion-datetime [(ngModel)]="taskDate" displayFormat="D MMM YYYY" ></ion-datetime>
 </ion-item>
+
 
 <ion-button class="ion-margin" expand="block" shape="round" color="success" (click)="add()">Add task</ion-button>
 

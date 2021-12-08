@@ -16,6 +16,9 @@ export class HomePage {
   todoList = [];
 
   today: number = Date.now();
+  active: any;
+
+  itemColor = '#000';
 
   constructor(public modalCtrl: ModalController, public todoService: TodoService) {
     this.getAllTask();
@@ -35,6 +38,10 @@ export class HomePage {
 
     return await modal.present();
 
+  }
+
+  async complete(item){
+    this.itemColor = '#72CB86';
   }
 
   getAllTask() {
