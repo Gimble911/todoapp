@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: ' ',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
     path: 'newtask',
     loadChildren: () => import('./newtask/newtask.module').then( m => m.NewtaskPageModule)
   },
